@@ -125,29 +125,9 @@ namespace Password
     
 
 
-    private void button1_Click(object sender, EventArgs e)
-        {
-      
-            var key = "b14ca5898a4e4133bbce2ea2315a1916";
-
-            string str = start.Text;
-            Enc.Text = AesOperation.EncryptString(key, str);
-            stop.Text = AesOperation.EncryptString(key, str);
 
 
-
-
-
-
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-  
-            var key = "b14ca5898a4e4133bbce2ea2315a1916";
-            Dec.Text = AesOperation.DecryptString(key, stop.Text);
-        }
+        
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -217,11 +197,16 @@ namespace Password
 
         private void button6_Click(object sender, EventArgs e)
         {
+
             string[] lines = File.ReadAllLines("C:\\Users\\Lukas\\source\\repos\\Password\\Password\\bin\\Debug\\text.txt");
             IEnumerable<string> selectLines = lines.Where(line => line.StartsWith(textBox6.Text));
             foreach (var item in selectLines)
             {
-                MessageBox.Show(item);
+                
+  
+                string[] zodz = item.Split(' ');
+                MessageBox.Show(zodz[1]);
+
             }
         }
 
